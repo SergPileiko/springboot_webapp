@@ -1,0 +1,22 @@
+CREATE DATABASE  employeedb;
+
+USE employeedb;
+
+CREATE TABLE employee (
+  employee_id BIGINT NOT NULL AUTO_INCREMENT,
+  first_name varchar(15),
+  last_name varchar(25),
+  department_id int,
+  job_title varchar(25),
+  gender ENUM('MALE', 'FEMALE'),
+  date_of_birth Date,
+  PRIMARY KEY (employee_id)
+);
+
+INSERT INTO employeedb.employee(first_name, last_name, department_id, job_title, gender, date_of_birth)
+VALUES('Alex', 'Petrov', 1, 'junior', 'MALE', '1992-02-05'),
+('Sergey', 'Tomkin', 2, 'middle', 'MALE', '1988-07-10'),
+('Oleg', 'Ivanov', 1, 'senior', 'MALE', '1995-04-12'),
+('Lera', 'Litvin', 1, 'junior', 'FEMALE', '1994-11-11'),
+('Sveta', 'Sidorova', 2, 'senior', 'FEMALE', '1987-10-08'),
+('Oleg', 'Zaycev', 3, 'senior', 'MALE', '1990-05-06');
