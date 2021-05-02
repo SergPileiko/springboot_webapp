@@ -1,6 +1,11 @@
-# springboot_webapp
+### Practical task
 
-it is REST service
+Using the provided skeleton, implement the REST service.
 
-MySQL
-Hibernate
+Useful link: https://spring.io/guides/gs/rest-service/
+
+In addition you could use Swagger to provide API documentation.
+        
+        
+  
+

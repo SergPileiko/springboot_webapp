@@ -1,0 +1,147 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: root
+      changes:
+        - createTable:
+            tableName: employee
+            columns:
+              - column:
+                  name: employee_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(25)
+              - column:
+                  name: last_name
+                  type: varchar(25)
+              - column:
+                  name: department_id
+                  type: INT
+              - column:
+                  name: job_title
+                  type: varchar(25)
+              - column:
+                  name: gender
+                  type: varchar(25)
+              - column:
+                  name: date_of_birth
+                  type: DATE
+  - changeSet:
+      id: 2
+      author: root
+      comment: "Fill table"
+      changes:
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: first_name
+                  value: "Alex"
+              - column:
+                  name: last_name
+                  value: "Petrov"
+              - column:
+                  name: department_id
+                  value: 1
+              - column:
+                  name: job_title
+                  value: "junior"
+              - column:
+                  name: gender
+                  value: "MALE"
+              - column:
+                  name: date_of_birth
+                  value: "1992-02-05"
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: first_name
+                  value: "Sergey"
+              - column:
+                  name: last_name
+                  value: "Tomkin"
+              - column:
+                  name: department_id
+                  value: 2
+              - column:
+                  name: job_title
+                  value: "middle"
+              - column:
+                  name: gender
+                  value: "MALE"
+              - column:
+                  name: date_of_birth
+                  value: "1988-07-10"
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: first_name
+                  value: "Oleg"
+              - column:
+                  name: last_name
+                  value: "Ivanov"
+              - column:
+                  name: department_id
+                  value: 1
+              - column:
+                  name: job_title
+                  value: "senior"
+              - column:
+                  name: gender
+                  value: "MALE"
+              - column:
+                  name: date_of_birth
+                  value: "1995-04-12"
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: first_name
+                  value: "Lera"
+              - column:
+                  name: last_name
+                  value: "Litvin"
+              - column:
+                  name: department_id
+                  value: 1
+              - column:
+                  name: job_title
+                  value: "junior"
+              - column:
+                  name: gender
+                  value: "FEMALE"
+              - column:
+                  name: date_of_birth
+                  value: "1994-11-11"
+        - insert:
+            tableName: employee
+            columns:
+              - column:
+                  name: first_name
+                  value: "Sveta"
+              - column:
+                  name: last_name
+                  value: "Sidorova"
+              - column:
+                  name: department_id
+                  value: 1
+              - column:
+                  name: job_title
+                  value: "senior"
+              - column:
+                  name: gender
+                  value: "FEMALE"
+              - column:
+                  name: date_of_birth
+                  value: "1987-10-08"
+      rollback:
+        - delete:
+            tableName: employee

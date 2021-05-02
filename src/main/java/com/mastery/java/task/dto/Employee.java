@@ -1,6 +1,7 @@
 package com.mastery.java.task.dto;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "employee")
@@ -27,12 +28,12 @@ public class Employee {
     private Gender gender;
 
     @Column(name = "date_of_birth")
-    private String dateOfBirth;
+    private Date dateOfBirth;
 
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, Integer departmentId, String jobTitle, Gender gender, String dateOfBirth) {
+    public Employee(String firstName, String lastName, Integer departmentId, String jobTitle, Gender gender, Date dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.departmentId = departmentId;
@@ -91,11 +92,11 @@ public class Employee {
         this.gender = gender;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 }
